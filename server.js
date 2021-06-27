@@ -36,11 +36,14 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const getTask = require('./routes/homePage')
+const editModal = require('./routes/edit-modal')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(db));
 app.use('/', getTask(db))
+app.use('/', editModal(db))
+// app.use('/', editModal(db))
 // Note: mount other resources here, using the same pattern above
 
 
