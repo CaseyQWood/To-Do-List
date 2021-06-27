@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router();
-const task = require('../db/queries/task') 
-// ^this^ would be requiring a query to the DB that we make 
-//for what ever data we need for our .get requests
+
 
 
 module.exports = (db) => {
