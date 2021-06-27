@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  background-color: #66635B;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  color: #eeeeee;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      display: inline;
+
+      i {
+        padding: 10px;
+      }
+    }
+  }
+}
