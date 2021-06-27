@@ -28,11 +28,11 @@ VALUES ('2', 'Iron Man', 'films', false);
 INSERT INTO tasks (owner_id, description, category, completed)
 VALUES ('2', 'Iron Man 2', 'films', false);
 INSERT INTO tasks (owner_id, description, category, completed)
-VALUES ('3', `Schindler's List`, 'films', false);
+VALUES ('3', 'Schindlers List', 'films', false);
 
 -- Restaurant category
 INSERT INTO tasks (owner_id, description, category, completed)
-VALUES ('1', `McDonald's`, 'restaurants', true);
+VALUES ('1', 'McDonalds', 'restaurants', true);
 INSERT INTO tasks (owner_id, description, category, completed)
 VALUES ('3', 'Burger King', 'restaurants', false);
 INSERT INTO tasks (owner_id, description, category, completed)
@@ -42,7 +42,7 @@ VALUES ('3', 'dairy queen', 'restaurants', false);
 
 -- Product category
 INSERT INTO tasks (owner_id, description, category, completed)
-VALUES ('1', `Banana`, 'products', false);
+VALUES ('1', 'Banana', 'products', false);
 INSERT INTO tasks (owner_id, description, category, completed)
 VALUES ('1', 'apple', 'products', false);
 INSERT INTO tasks (owner_id, description, category, completed)
