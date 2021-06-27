@@ -7,15 +7,27 @@ nav {
   top: 0;
   color: #eeeeee;
 
-  ul {
-    list-style-type: none;
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
 
-    li {
-      display: inline;
+    > ul {
+      padding: 0;
+      margin: 1em;
+    }
 
-      i {
-        padding: 10px;
+    ul {
+      list-style-type: none;
+
+      li {
+        display: inline;
+        cursor: pointer;
+
+        i {
+          padding: 10px;
+        }
       }
     }
   }
+
 }
