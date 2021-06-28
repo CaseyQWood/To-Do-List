@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="/styles/normalize.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-task.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tasks.css" type="text/css" />
 
 </head>
 <body>
@@ -37,14 +39,23 @@
 
   <!-- Main content -->
   <main>
-    <h3>
+    <h2>
       Books
-    </h3>
+    </h2>
     <section class="tasks-list">
       <form>
         <input type="text" id="new-task">
         <input type="submit">
       </form>
+
+      <ul class="incomplete">
+        <li><i class="fas fa-book"></i> <input type="checkbox"> <span>Read harry potter</span> <button type="submit" formmethod="GET">Edit</button> </li>
+      </ul>
+
+      <div><span>Completed</span></div>
+      <ul class="complete">
+        <li><i class="fas fa-book"></i> <input type="checkbox"> <span>Read harry potter</span> <button type="submit" formmethod="GET">Edit</button> </li>
+      </ul>
     </section>
 
 

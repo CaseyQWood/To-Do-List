@@ -9,14 +9,8 @@ nav {
 
   .nav-container {
     display: flex;
-    justify-content: space-between;
 
     > ul {
-      padding: 0;
-      margin: 1em;
-    }
-
-    .nav-bar-left .nav-bar-right {
       list-style-type: none;
 
       li {
@@ -26,6 +20,10 @@ nav {
         i {
           padding: 10px;
         }
+      }
+
+      li:hover {
+        background: orange;
       }
     }
   }

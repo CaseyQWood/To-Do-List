@@ -1,3 +1,24 @@
 section {
-  border: 1px solid black;
+
+  ul {
+    border: 1px solid black;
+    list-style-type: none;
+
+    li {
+      border: 2px solid red;
+      padding: 1em;
+      background: orange;
+
+      button {
+        float: right;
+      }
+    }
+  }
+
+  ul.complete {
+    li {
+      background: grey;
+    }
+  }
+
 }
