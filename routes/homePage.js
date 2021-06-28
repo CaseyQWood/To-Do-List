@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router();
 
-
-
 module.exports = (db) => {
   // this will get the user data from the DB to load up their specific list items
   router.get("/", (req, res) => {
