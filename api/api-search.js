@@ -46,7 +46,7 @@ const findRestaurant = (userInput) => {
 
   axios({
     method: 'get',
-    url: `https://api.documenu.com/v2/restaurants/search/fields?restaurant_name=${searchString}&key=1e7148e00a3d6a639ce6ad3f3437184d`,
+    url: `https://api.documenu.com/v2/restaurants/search/fields?restaurant_name=${searchString}&key=`,
     responseType: 'json'
   })
   .then((res) => {
@@ -54,7 +54,7 @@ const findRestaurant = (userInput) => {
   })
 }
 
-findRestaurant('the keg')
+// findRestaurant('the keg')
 
 module.exports = {
   findMovie,
