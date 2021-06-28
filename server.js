@@ -37,6 +37,7 @@ const usersRoutes = require("./routes/users");
 const getTasks = require('./routes/homePage');
 const editModal = require('./routes/modal');
 const updateModal = require('./routes/modal-update');
+const newLineItem = require('./routes/create-new')
 //const registerRoutes = require('./routes/register');
 //const loginRoutes = require('./routes/login')
 
@@ -46,6 +47,7 @@ app.use("/users", usersRoutes(db));
 app.use('/home', getTasks(db))
 app.use('/edit', editModal(db))
 app.use('/update', updateModal(db))
+app.use('/create', newLineItem())
 //app.use('/register', registerRoutes(db));
 //app.use('/login', loginRoutes(db));
 
