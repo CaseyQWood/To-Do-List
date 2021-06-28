@@ -2,13 +2,13 @@ const express = require('express')
 const router = express.Router();
 
 module.exports = (db) => {
-router.post('/:list_id/update', (req, res) => {
+router.post('/:list_id', (req, res) => {
   const listId = req.params.list_id;
   const category = req.query.category
   const values = [category, listId]
   const query = `
-  UPDATE tasks 
-  SET category = $1 
+  UPDATE tasks
+  SET category = $1
   Where id = $2;`;
 
   db.query(query, values)
