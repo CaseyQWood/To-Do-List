@@ -38,8 +38,26 @@ const findBook = (userInput) => {
   })
 };
 
-findBook('harry potter')
+// findBook('harry potter')
+
+const findRestaurant = (userInput) => {
+  const globalReplace = / /g;
+  const searchString = userInput.replace(globalReplace, '+');
+
+  axios({
+    method: 'get',
+    url: `https://api.documenu.com/v2/restaurants/search/fields?restaurant_name=${searchString}&key=1e7148e00a3d6a639ce6ad3f3437184d`,
+    responseType: 'json'
+  })
+  .then((res) => {
+    console.log(res.data.data[0].restaurant_name)
+  })
+}
+
+findRestaurant('the keg')
 
 module.exports = {
-  findMovie
+  findMovie,
+  findMovie,
+  findRestaurant
 };
