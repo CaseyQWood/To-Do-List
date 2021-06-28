@@ -29,33 +29,64 @@ $(document).ready(function() {
           <button type="submit" formmethod="GET">Edit</button>
       </li>
     `);
-    return $list
-  }
+    return $list;
+  };
 
   const renderTasks = function(tasks) {
-    //console.log("tasks: ", tasks);
+    $('.full-list li').remove();
+
     for(const task of tasks.list) {
-      console.log("task1: ", task);
-      console.log("complete: ", task.completed);
       if (task.completed) {
-        $('.complete').append(createList(task));
+        $('.complete').prepend(createList(task));
       } else {
-        $('.incomplete').append(createList(task));
+        $('.incomplete').prepend(createList(task));
       }
-    }
+    };
+  };
 
-  }
+  const renderCategorizedTasks = function(category, tasks) {
+    $('.full-list li').remove();
+    for(const task of tasks.list) {
+      console.log("category***: ", task.category);
+      if (task.category && category === task.category) {
+        if (task.completed) {
+          $('.complete').prepend(createList(task));
+        } else {
+          $('.incomplete').prepend(createList(task));
+        }
+      };
+    };
+  };
 
-
-  const loadTasks = function() {
+  const loadTasks = function(category) {
 
     $.get("/home", function() {
       console.log("reached home route")
     }).then((result) => {
       console.log("homeres: ", result);
-      renderTasks(result);
+      if (category) {
+        renderCategorizedTasks(category, result);
+      } else {
+        renderTasks(result);
+      }
     })
-  }
+  };
+
+  $('#homes').click(function() {
+    loadTasks(null);
+  });
+  $('#books').click(function() {
+    loadTasks('books');
+  });
+  $('#films').click(function() {
+    loadTasks('films');
+  });
+  $('#resturants').click(function() {
+    loadTasks('restaurants');
+  });
+  $('#products').click(function() {
+    loadTasks('products');
+  });
 
   loadTasks();
 });
