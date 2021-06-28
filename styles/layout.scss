@@ -12,6 +12,16 @@ html {
  * Global layout
  */
 body {
-  background-color: #EEE;
-  margin: 0;
+  background-color: #f4f1ec;
+}
+
+main {
+  margin: auto;
+  margin-top: 100px;
+  width: 90%;
+  background-color: white;
+}
+
+ul {
+  padding-left: 0;
 }

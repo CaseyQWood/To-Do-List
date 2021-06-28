@@ -7,15 +7,25 @@ nav {
   top: 0;
   color: #eeeeee;
 
-  ul {
-    list-style-type: none;
+  .nav-container {
+    display: flex;
 
-    li {
-      display: inline;
+    > ul {
+      list-style-type: none;
 
-      i {
-        padding: 10px;
+      li {
+        display: inline;
+        cursor: pointer;
+
+        i {
+          padding: 10px;
+        }
+      }
+
+      li:hover {
+        background: orange;
       }
     }
   }
+
 }
