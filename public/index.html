@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="/styles/new-task.css" type="text/css" />
   <link rel="stylesheet" href="/styles/tasks.css" type="text/css" />
 
+  <!-- External JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+
 </head>
 <body>
   <!-- Navigation bar (fixed) -->
@@ -23,11 +29,11 @@
     <nav>
       <div class="nav-container">
         <ul class="nav-bar-left">
-          <li><i class="fas fa-list-ul"></i> All</li>
-          <li><i class="fas fa-book"></i> Books</li>
-          <li><i class="fas fa-film"></i> Films</li>
-          <li><i class="fas fa-utensils"></i> Restaurants</li>
-          <li><i class="fas fa-shopping-basket"></i> Products</li>
+          <li id="homes"><i class="fas fa-list-ul"></i> All</li>
+          <li id="books"><i class="fas fa-book"></i> Books</li>
+          <li id="films"><i class="fas fa-film"></i> Films</li>
+          <li id="resturants"><i class="fas fa-utensils"></i> Restaurants</li>
+          <li id="products"><i class="fas fa-shopping-basket"></i> Products</li>
         </ul>
         <ul class="nav-bar-right">
           <li>Name</li>
@@ -48,13 +54,14 @@
         <input type="submit">
       </form>
 
-      <ul class="incomplete">
-        <li><i class="fas fa-book"></i> <input type="checkbox"> <span>Read harry potter</span> <button type="submit" formmethod="GET">Edit</button> </li>
+      <div><span>Incomplete</span></div>
+
+      <ul class="full-list incomplete">
       </ul>
 
       <div><span>Completed</span></div>
-      <ul class="complete">
-        <li><i class="fas fa-book"></i> <input type="checkbox"> <span>Read harry potter</span> <button type="submit" formmethod="GET">Edit</button> </li>
+
+      <ul class="full-list complete">
       </ul>
     </section>
 
