@@ -21,7 +21,6 @@ $(document).ready(function() {
   const createList = function(task) {
 
     const icon = checkIcon(task.category);
-    console.log("icon: ", icon);
     let $list = $(`
       <li><i class="${icon}"></i>
           <input type="checkbox">
@@ -47,7 +46,6 @@ $(document).ready(function() {
   const renderCategorizedTasks = function(category, tasks) {
     $(".full-list li").remove();
     for(const task of tasks.list) {
-      console.log("category***: ", task.category);
       if (task.category && category === task.category) {
         if (task.completed) {
           $(".complete").prepend(createList(task));
@@ -63,7 +61,6 @@ $(document).ready(function() {
     $.get("/home", function() {
       console.log("reached home route")
     }).then((result) => {
-      console.log("homeres: ", result);
       if (category) {
         renderCategorizedTasks(category, result);
       } else {
@@ -73,7 +70,20 @@ $(document).ready(function() {
   };
 
   //submit new task
-  $("form")
+  $("#new-task-form").submit(function(event) {
+    event.preventDefault();
+
+    console.log("this: ", this);
+
+    const data = $(this).serialize();
+    console.log("data: ", data);
+    $.post("/create", data, function(data, status) {
+      console.log("create task sent", data)
+    }).then((result) => {
+      console.log("postitem: ", result);
+    })
+
+  });
 
   $("#homes").click(function() {
     loadTasks(null);
