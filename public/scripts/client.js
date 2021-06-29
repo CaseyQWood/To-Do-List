@@ -26,7 +26,7 @@ $(document).ready(function() {
       <li><i class="${icon}"></i>
           <input type="checkbox">
           <span>${task.description}</span>
-          <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-taskId="${task.id}" data-category="${task.category}">Edit</button>
+          <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-id="${task.id}" data-category="${task.category}">Edit</button>
       </li>
     `);
     return $list;

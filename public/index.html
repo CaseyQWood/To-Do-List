@@ -79,13 +79,13 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="edit-task-form" method="POST" action="/update">
               <div class="form-group">
                 <label for="description" class="col-form-label">Task:</label>
-                <input type="text" class="form-control" id="description">
+                <input type="text" class="form-control" id="description" name="description">
               </div>
               <div class="form-group">
-                <select class="form-select" id="category-dropdown" aria-label="category-select">
+                <select class="form-select" id="category-dropdown" name="category" aria-label="category-select">
                   <option value="all">not-categorized</option>
                   <option value="books">Books</option>
                   <option value="films">Films</option>
@@ -97,7 +97,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary">Delete</button>
-            <button type="button" class="btn btn-primary">Send message</button>
+            <button type="submit" form="edit-task-form" value="submit" class="btn btn-primary">Save</button>
           </div>
         </div>
       </div>
