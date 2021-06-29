@@ -25,11 +25,14 @@ $(document).ready(function() {
       <li><i class="${icon}"></i>
           <input type="checkbox">
           <span>${task.description}</span>
-          <button type="submit" formmethod="GET">Edit</button>
+          <button type="submit" formaction="/update/${task.id}" formmethod="POST">Edit</button>
+          <button type="submit" formaction="/delete/${task.id}" formmethod="POST">Delete</button>
       </li>
     `);
     return $list;
   };
+
+
 
   const renderTasks = function(tasks) {
     $(".full-list li").remove();
