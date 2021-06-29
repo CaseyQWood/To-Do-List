@@ -78,9 +78,9 @@ $(document).ready(function() {
     const data = $(this).serialize();
     console.log("data: ", data);
     $.post("/create", data, function(data, status) {
-      console.log("create task sent", data)
-    }).then((result) => {
-      console.log("postitem: ", result);
+      console.log("create task sent")
+    }).then(() => {
+      console.log("task created");
     })
 
   });

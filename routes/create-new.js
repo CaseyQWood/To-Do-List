@@ -7,13 +7,14 @@ const {findMovie, findBook, findRestaurant} = require('../api/api-search')
 
 module.exports = () => {
   router.post("/", (req, res) => {
-    console.log(req)
-    const toDoItem = req.query.title
-    const promice1 = findMovie(toDoItem)
-    Promise.all([promice1])
-    .then(result => {
-      res.json(result)
-    })
+    //console.log(req)
+    // const toDoItem = req.query.title
+    // const promice1 = findMovie(toDoItem)
+    // Promise.all([promice1])
+    // .then(result => {
+    //   res.json(result)
+    // })
+      res.json("hey")
 
   })
  return router
