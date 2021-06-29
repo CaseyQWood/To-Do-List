@@ -19,13 +19,14 @@ $(document).ready(function() {
   };
 
   const createList = function(task) {
+    console.log("task: ", task)
 
     const icon = checkIcon(task.category);
     let $list = $(`
       <li><i class="${icon}"></i>
           <input type="checkbox">
           <span>${task.description}</span>
-          <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-taskId="${task.id} data-category="${task.category}" data->Edit</button>
+          <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-taskId="${task.id}" data-category="${task.category}">Edit</button>
       </li>
     `);
     return $list;
