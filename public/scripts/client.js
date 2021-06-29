@@ -25,7 +25,7 @@ $(document).ready(function() {
       <li><i class="${icon}"></i>
           <input type="checkbox">
           <span>${task.description}</span>
-          <button type="submit" formmethod="GET">Edit</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
       </li>
     `);
     return $list;
