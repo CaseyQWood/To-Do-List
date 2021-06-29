@@ -47,7 +47,7 @@ app.use("/users", usersRoutes(db));
 app.use('/home', getTasks(db))
 app.use('/edit', editModal(db))
 app.use('/update', updateModal(db))
-app.use('/create', newLineItem())
+app.use('/create', newLineItem(db))
 //app.use('/register', registerRoutes(db));
 //app.use('/login', loginRoutes(db));
 
