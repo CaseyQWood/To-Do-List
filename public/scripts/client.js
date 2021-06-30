@@ -32,6 +32,8 @@ $(document).ready(function() {
     return $list;
   };
 
+
+
   const renderTasks = function(tasks) {
     $(".full-list li").remove();
 
