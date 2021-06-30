@@ -40,7 +40,7 @@ $(document).ready(function() {
       } else {
         $(".incomplete").prepend(createList(task));
       }
-    };
+    }
   };
 
   const renderCategorizedTasks = function(category, tasks) {
@@ -53,8 +53,8 @@ $(document).ready(function() {
         } else {
           $(".incomplete").prepend(createList(task));
         }
-      };
-    };
+      }
+    }
   };
 
   const loadTasks = function(category) {
@@ -139,7 +139,7 @@ $(document).ready(function() {
     if (category) {
       heading = title.charAt(0).toUpperCase() + title.slice(1);
     } else {
-      heading = "All Tasks"
+      heading = "All Tasks";
     };
     let $heading = $(`<span id="category-title">${heading}</span>`);
     return $heading;
