@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/normalize.css" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/vendor/normalize.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-task.css" type="text/css" />
@@ -18,9 +19,12 @@
 
   <!-- External JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/modal.js"></script>
+
 
 </head>
 <body>
@@ -64,6 +68,40 @@
       <ul class="full-list complete">
       </ul>
     </section>
+
+    <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="edit-modal-label">Edit Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="edit-task-form" method="POST" action="/update">
+              <div class="form-group">
+                <label for="description" class="col-form-label">Task:</label>
+                <input type="text" class="form-control" id="description" name="description">
+              </div>
+              <div class="form-group">
+                <select class="form-select" id="category-dropdown" name="category" aria-label="category-select">
+                  <option value="all">not-categorized</option>
+                  <option value="books">Books</option>
+                  <option value="films">Films</option>
+                  <option value="resturants">Restaurants</option>
+                  <option value="products">Products</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="delete-task-button" type="button" class="btn btn-danger">Delete</button>
+            <button type="submit" form="edit-task-form" value="submit" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   </main>
