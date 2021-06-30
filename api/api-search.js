@@ -32,7 +32,6 @@ const findMovie = (userInput) => {
 
 };
 
-
 const findBook = (userInput) => {
   const globalReplace = / /g;
   const searchString = userInput.replace(globalReplace, '+');
@@ -86,8 +85,7 @@ const findRestaurant = (userInput) => {
 
   })
 
-}
-
+};
 
 module.exports = {
   findMovie,
