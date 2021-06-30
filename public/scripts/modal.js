@@ -28,11 +28,13 @@ $(document).ready(function() {
     });
   });
 
-  $("delete-task-button").click(function() {
-    $.ajax({
-      url: `/delete/${taskId}`,
-      type: 'DELETE',
+  $("#delete-task-button").click(function(event) {
+    event.preventDefault();
+
+    $.post(`/delete/${taskId}`, function(data, status) {
+      console.log("submit delete")
     }).then(() => {
+      $('#edit-modal').modal('hide');
       console.log("task deleted");
     });
   });
