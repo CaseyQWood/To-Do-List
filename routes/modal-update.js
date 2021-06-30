@@ -13,6 +13,27 @@ router.post('/:list_id', (req, res) => {
   Where id = $3
   RETURNING *;`;
 
+  console.log(category)
+  console.log(description)
+  // console.log(description.split(' '))
+  // const globalReplace = / /g;
+  // const keyWords = description.replace(globalReplace, '')
+
+  db.query(`
+  UPDATE cortex
+  SET ${category} = ${category} + 1
+  WHERE search_value = '${description}'
+  RETURNING *`)
+  .then((data) => {
+    console.log(data)
+  })
+  .catch((err) => {
+  console.error(err)
+   return res.status(500).json({error: err.message})
+  })
+
+
+
   db.query(query, values)
     .then((data) => {
       const updatedItem = data.rows
@@ -20,9 +41,7 @@ router.post('/:list_id', (req, res) => {
     })
     .catch((err) => {
       console.error(err)
-      res
-      .status(500)
-      .json({error: err.message})
+      return res.status(500).json({error: err.message})
     })
 })
 
