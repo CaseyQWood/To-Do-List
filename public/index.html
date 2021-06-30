@@ -36,7 +36,7 @@
           <li id="homes"><i class="fas fa-list-ul"></i> All</li>
           <li id="books"><i class="fas fa-book"></i> Books</li>
           <li id="films"><i class="fas fa-film"></i> Films</li>
-          <li id="resturants"><i class="fas fa-utensils"></i> Restaurants</li>
+          <li id="restaurants"><i class="fas fa-utensils"></i> Restaurants</li>
           <li id="products"><i class="fas fa-shopping-basket"></i> Products</li>
         </ul>
         <ul class="nav-bar-right">
@@ -54,7 +54,6 @@
     <section class="tasks-list">
       <form id="new-task-form" method="POST" action="/create">
         <input type="text" name="description">
-        <input type="submit">
       </form>
 
       <div><span>Incomplete</span></div>
@@ -88,14 +87,14 @@
                   <option value="null">not-categorized</option>
                   <option value="books">Books</option>
                   <option value="films">Films</option>
-                  <option value="resturants">Restaurants</option>
+                  <option value="restaurants">Restaurants</option>
                   <option value="products">Products</option>
                 </select>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button id="delete-task-button" type="button" class="btn btn-danger">Deletel</button>
+            <button id="delete-task-button" type="button" class="btn btn-danger">Delete</button>
             <button type="submit" form="edit-task-form" value="submit" class="btn btn-primary">Save</button>
           </div>
         </div>
