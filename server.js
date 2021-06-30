@@ -38,8 +38,8 @@ const getTasks = require('./routes/homePage');
 const editModal = require('./routes/modal');
 const updateModal = require('./routes/modal-update');
 const newLineItem = require('./routes/create-new');
-//const registerRoutes = require('./routes/register');
-//const loginRoutes = require('./routes/login')
+const registerRoutes = require('./routes/register');
+const loginRoutes = require('./routes/login')
 const deleteRoute = require('./routes/delete');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -49,8 +49,8 @@ app.use('/edit', editModal(db));
 app.use('/update', updateModal(db));
 app.use('/create', newLineItem(db));
 app.use('/delete', deleteRoute(db));
-//app.use('/register', registerRoutes(db));
-//app.use('/login', loginRoutes(db));
+app.use('/register', registerRoutes(db));
+app.use('/login', loginRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 

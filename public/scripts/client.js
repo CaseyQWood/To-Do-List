@@ -25,8 +25,7 @@ $(document).ready(function() {
       <li><i class="${icon}"></i>
           <input type="checkbox">
           <span>${task.description}</span>
-          <button type="submit" formaction="/update/${task.id}" formmethod="POST">Edit</button>
-          <button type="submit" formaction="/delete/${task.id}" formmethod="POST">Delete</button>
+          <button type=“button” class=“btn btn-outline-dark” data-toggle=“modal” data-target=“#edit-modal” data-description=“${task.description}” data-id=“${task.id}” data-category=“${task.category}“>Edit</button>
       </li>
     `);
     return $list;
