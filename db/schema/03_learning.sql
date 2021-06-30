@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS users CASCADE;
+CREATE TABLE cortex (
+  id SERIAL PRIMARY KEY NOT NULL,
+  search_value VARCHAR(255) NOT NULL,
+  books INT DEFAULT 0,
+  films INT DEFAULT 0,
+  restaurants INT DEFAULT 0,
+  products INT DEFAULT 0
+);

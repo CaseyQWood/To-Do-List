@@ -29,7 +29,7 @@ module.exports = (db) => {
     }
     
     if (category) { 
-// this needs to be improved, currently it just removes the first characters ----
+   // this needs to be improved, currently it just removes the first characters ----
       queryFunction(userInput.substring(8), category)
 
     } else {
@@ -48,3 +48,15 @@ module.exports = (db) => {
   })
 return router
 }
+
+// this is for checking the DB for change history 
+  // db.query(`
+  // SELECT * FROM cortex 
+  // WHERE search_value LIKE '%${description.substring(1)}%'`)
+  // .then((data) => {
+  //   console.log(data)
+  // })
+  // .catch((err) => {
+  // console.error(err)
+  //  return res.status(500).json({error: err.message})
+  // })
