@@ -2,31 +2,18 @@ const express = require('express')
 const router = express.Router();
 require('dotenv').config()
 const {findMovie, findBook, findRestaurant} = require('../api/api-search')
-const {chooseCategory} = require('./helperFunctions')
+const {chooseCategory, checkForVerb, queryFunction} = require('./helperFunctions')
+
 
 module.exports = (db) => {
   router.post("/", (req, res) => {
     const userInput = req.body.description
-    let category;
+    const category = checkForVerb(userInput)
     let description = userInput;
-
-    Promise.all([findMovie(userInput), findBook(userInput), findRestaurant(userInput)])
-    .then((results) => {
-
-      // if (userInput.toLowerCase().includes('to watch')) {
-      //   category = 'Movie'
-      // } else {
-      //   category = chooseCategory(results)
-      // }
-
-      return [description, chooseCategory(results)]
-
-    })
-    .then((values) => {
-
+    const queryFunction = (description, category) => {
       db.query(`
       INSERT INTO tasks (owner_id, description, category)
-      VALUES (1, '${values[0]}', '${values[1]}')
+      VALUES (1, '${description}', '${category}')
       RETURNING *`
       )
       .then((result) => {
@@ -39,17 +26,25 @@ module.exports = (db) => {
         .status(500)
         .json({error: err.message})
       })
-    })
+    }
+    
+    if (category) { 
+
+      queryFunction(userInput, category)
+
+    } else {
+      Promise.all([findMovie(userInput), findBook(userInput), findRestaurant(userInput)])
+      .then((results) => {
+  
+        return [description, chooseCategory(results)]
+  
+      })
+      .then((values) => {
+
+        queryFunction(values[0], values[1])
+  
+      })
+    }
   })
- return router
-};
-
-async function asyncFunc() {
-  const response = await axios.get("/some_url_endpoint");
-  const data = await response.json();
-
-  return data;
+return router
 }
-
-
- 

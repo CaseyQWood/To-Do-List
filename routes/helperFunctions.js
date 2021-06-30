@@ -13,6 +13,24 @@ const chooseCategory = (apiResults) => {
   }
 }
 
+const checkForVerb = (userInput) => {
+  if (userInput.toLowerCase().includes('to watch')) {
+    return 'films'
+  } 
+  else if (userInput.toLowerCase().includes('to read')) {
+    return 'books'
+  }
+  else if (userInput.toLowerCase().includes('to eat')) {
+    return 'restaurants'
+  }
+  else if (userInput.toLowerCase().includes('to buy')) {
+    return 'products'
+  } else {
+    return undefined
+  }
+}
+
 module.exports = {
-  chooseCategory
+  chooseCategory,
+  checkForVerb, 
 }
