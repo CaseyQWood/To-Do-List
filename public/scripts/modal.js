@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     modal.find(".modal-body input").val(description);
     modal.find(".modal-body #category-dropdown").val(category);
-  })
+  });
 
   $("#edit-task-form").submit(function(event) {
     event.preventDefault();
@@ -25,7 +25,16 @@ $(document).ready(function() {
     }).then(() => {
       $('#edit-modal').modal('hide');
       console.log("task edit completed");
-    })
-  })
+    });
+  });
+
+  $("delete-task-button").click(function() {
+    $.ajax({
+      url: `/delete/${taskId}`,
+      type: 'DELETE',
+    }).then(() => {
+      console.log("task deleted");
+    });
+  });
 
 });
