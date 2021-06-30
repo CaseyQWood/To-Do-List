@@ -29,13 +29,13 @@ module.exports = (db) => {
     }
     
     if (category) { 
-
-      queryFunction(userInput, category)
+// this needs to be improved, currently it just removes the first characters ----
+      queryFunction(userInput.substring(8), category)
 
     } else {
       Promise.all([findMovie(userInput), findBook(userInput), findRestaurant(userInput)])
       .then((results) => {
-  
+
         return [description, chooseCategory(results)]
   
       })
