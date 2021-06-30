@@ -2,40 +2,24 @@ const express = require('express')
 const router = express.Router();
 require('dotenv').config()
 const {findMovie, findBook, findRestaurant} = require('../api/api-search')
-
-
+const {chooseCategory} = require('./helperFunctions')
 
 module.exports = (db) => {
   router.post("/", (req, res) => {
-  
-    const toDoItem = req.body.description
-    const moviePromise = findMovie(toDoItem);
-    const bookPromise = findBook(toDoItem);
-    const restaurantPromise = findRestaurant(toDoItem);
+    const userInput = req.body.description
     let category;
-    let description = toDoItem;
+    let description = userInput;
 
-    Promise.all([moviePromise, bookPromise, restaurantPromise])
-    .then((result) => {
-      console.log(result)
+    Promise.all([findMovie(userInput), findBook(userInput), findRestaurant(userInput)])
+    .then((results) => {
 
-      if (result[2]) {
-        category = 'Restaurant'
-        // return res.json('Movie')
-      }
-      else if (result[0]) {
-        category = 'Movie'
-        // return res.json('Book')
-      }
-      else if (result[1]){
-        category = 'Book'
-        // return res.json('Restaurant')
-      } else {
-        category = 'Product'
-      }
+      // if (userInput.toLowerCase().includes('to watch')) {
+      //   category = 'Movie'
+      // } else {
+      //   category = chooseCategory(results)
+      // }
 
-      
-      return [description, category]
+      return [description, chooseCategory(results)]
 
     })
     .then((values) => {
