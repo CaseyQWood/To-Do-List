@@ -26,7 +26,7 @@ $(document).ready(function() {
     let $list = $(`
       <li><i class="${icon}"></i>
         <div id="checklist" checked>
-          <input type="checkbox">
+          <input type="checkbox" value="${task.id}">
           <label>${task.description}</label>
         </div>
           <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-id="${task.id}" data-category="${task.category}">Edit</button>
@@ -60,14 +60,28 @@ $(document).ready(function() {
     $.get("/home", function() {
     }).then((result) => {
         renderTasks(category, result);
-    }).then(() => {
-      //checkbox
+        return result;
+    }).then((res) => {
+      let taskId;
       $('input[type="checkbox"]').click(function(){
+        taskId = $(this).val();
+        console.log(taskId);
+
         if($(this).prop("checked") == true){
-          console.log("Checkbox is checked.");
-        }
-        else if($(this).prop("checked") == false){
-          console.log("Checkbox is unchecked.");
+          const data = "b";
+          $.post(`/complete/${taskId}`, data, function(data, status) {
+
+          }).then(() => {
+            //loadTasks(category, res);
+            console.log("Checkbox is checked.");
+          })
+        } else if ($(this).prop("checked") == false){
+          const data = "b";
+          $.post(`/complete/${taskId}`, data, function(data, status) {
+            //loadTasks(category, res);
+          }).then(() => {
+            console.log("Checkbox is unchecked.");
+          })
         }
       });
     })
