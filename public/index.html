@@ -32,7 +32,13 @@
   <header>
     <nav>
       <div class="nav-container">
-
+        <ul class="nav-bar-left">
+          <li id="homes"><i class="fas fa-list-ul"></i> All</li>
+          <li id="books"><i class="fas fa-book"></i> Books</li>
+          <li id="films"><i class="fas fa-film"></i> Films</li>
+          <li id="restaurants"><i class="fas fa-utensils"></i> Restaurants</li>
+          <li id="products"><i class="fas fa-shopping-basket"></i> Products</li>
+        </ul>
         <ul class="nav-bar-right">
           <li>Name</li>
           <li><i class="fas fa-sign-out-alt"></i> Log Out</li>
@@ -43,18 +49,8 @@
 
   <!-- Main content -->
   <main>
-    <div class="left-bar">
-      <ul class="nav-bar-left">
-        <li id="homes"><i class="fas fa-list-ul"></i> All</li>
-        <li id="books"><i class="fas fa-book"></i> Books</li>
-        <li id="films"><i class="fas fa-film"></i> Films</li>
-        <li id="restaurants"><i class="fas fa-utensils"></i> Restaurants</li>
-        <li id="products"><i class="fas fa-shopping-basket"></i> Products</li>
-      </ul>
-    </div>
     <h2>
     </h2>
-
     <section class="tasks-list">
       <form id="new-task-form" method="POST" action="/create">
         <input type="text" name="description">
