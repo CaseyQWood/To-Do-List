@@ -21,7 +21,12 @@ main {
   margin: auto;
   margin-top: 70px;
   width: 100%;
-  background-color: #F7F7FA;
+
+  #main-body {
+    background-image: url("https://github.com/CaseyQWood/To-Do-List/blob/master/public/images/teal-maountain-background.jpeg?raw=true");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
 
   h2 {
     text-align: center;
@@ -32,10 +37,13 @@ main {
     width: 250px;
     flex-direction: column;
     list-style-type: none;
-    background-color: lightblue;
+    background-color: #EFF9FB;
+    padding: 3em 1em;
 
     li {
       display: inline;
+      padding: 0.5em;
+      border-radius: 10px;
       cursor: pointer;
 
       i {
@@ -44,7 +52,7 @@ main {
     }
 
     li:hover {
-      background: orange;
+      background: #ffffff;
     }
   }
 
