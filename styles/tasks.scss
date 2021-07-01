@@ -1,5 +1,13 @@
 section {
 
+  > .task-seperator {
+    background-color: #ffffff;
+    margin: 1em;
+    padding: 0.5em 3em;
+    border-radius: 10px;
+    opacity: 0.8;
+  }
+
   ul {
     list-style-type: none;
 
