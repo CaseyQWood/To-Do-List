@@ -1,5 +1,6 @@
 const axios = require('axios')
 require('dotenv').config()
+const removeSpecials = require('./helperfunction')
 
 // tests from this file directly will fail as the .env file needs to be in the folder its being used
 // this file is only for holding the functions
@@ -18,8 +19,7 @@ const findMovie = (userInput) => {
     if (res.data.Error === 'Movie not found!') {
       return false
     }
-
-    if (!res.data.Title.toLowerCase().includes(userInput.toLowerCase())) {
+    if (!removeSpecials(res.data.Title).toLowerCase().includes(removeSpecials(userInput).toLowerCase())) {
       return false
     }
     return res.data.Title
