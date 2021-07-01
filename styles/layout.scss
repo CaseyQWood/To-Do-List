@@ -12,16 +12,50 @@ html {
  * Global layout
  */
 body {
-  background-color: #f4f1ec;
+  background-color: #ffff
 }
 
 main {
+  display: flex;
+  flex-direction: row;
   margin: auto;
   margin-top: 100px;
   width: 90%;
   background-color: white;
 }
 
-ul {
+.left-bar {
+  width: 30%;
+  align-items: center;
   padding-left: 0;
+}
+
+.nav-container {
+display: flex;
+justify-content: space-around;
+
+}
+
+.nav-bar-left {
+  list-style: none;
+  margin-top: 10%;
+}
+.nav-bar-left li {
+   margin-top: 5%;
+   align-items: center;
+}
+.new-task-form {
+  margin-top: 30%;
+  left: 30%;
+  width: 700px;
+}
+
+
+
+.incomplete {
+  margin-top: 5%;
+}
+
+.complete {
+  margin-top: 5%;
 }
