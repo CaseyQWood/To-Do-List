@@ -29,7 +29,7 @@ $(document).ready(function() {
           <input type="checkbox" value="${task.id}" ${task.completed ? 'checked' : ''}>
           <label>${task.description}</label>
         </div>
-          <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-id="${task.id}" data-category="${task.category}">Edit</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-id="${task.id}" data-category="${task.category}">Edit</button>
       </li>
     `);
     return $list;
@@ -153,36 +153,36 @@ $(document).ready(function() {
   $("#homes").click(function() {
     loadTasks(null);
     catPage = null;
-    $("h2 #category-title").remove();
-    $('h2').append(renderHeading(catPage));
+    $("h3 #category-title").remove();
+    $('h3').append(renderHeading(catPage));
   });
   $("#books").click(function() {
     loadTasks("books");
     catPage = "books";
-    $("h2 #category-title").remove();
-    $('h2').append(renderHeading(catPage));
+    $("h3 #category-title").remove();
+    $('h3').append(renderHeading(catPage));
   });
   $("#films").click(function() {
     loadTasks("films");
     catPage = "films";
-    $("h2 #category-title").remove();
-    $('h2').append(renderHeading(catPage));
+    $("h3 #category-title").remove();
+    $('h3').append(renderHeading(catPage));
   });
   $("#restaurants").click(function() {
     loadTasks("restaurants");
     catPage = "restaurants";
-    $("h2 #category-title").remove();
-    $('h2').append(renderHeading(catPage));
+    $("h3 #category-title").remove();
+    $('h3').append(renderHeading(catPage));
   });
   $("#products").click(function() {
     loadTasks("products");
     catPage = "products";
-    $("h2 #category-title").remove();
-    $('h2').append(renderHeading(catPage));
+    $("h3 #category-title").remove();
+    $('h3').append(renderHeading(catPage));
   });
 
   loadTasks(null);
-  $('h2').append(renderHeading(null));
+  $('h3').append(renderHeading(null));
 
 
 });

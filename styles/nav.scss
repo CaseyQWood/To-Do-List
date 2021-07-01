@@ -1,31 +1,29 @@
 nav {
-  display: flex;
   background-color: #66635B;
-  height: 100px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  color: #eeeeee;
 
   .nav-container {
-    display: flex;
 
-    > ul {
-      list-style-type: none;
+    .nav-bar-top {
+      height: 50px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      opacity: 0.8;
+    }
 
-      li {
-        display: inline;
-        cursor: pointer;
+    li {
+      display: inline;
+      cursor: pointer;
 
-        i {
-          padding: 10px;
-        }
-      }
-
-      li:hover {
-        background: orange;
+      i {
+        padding: 10px;
       }
     }
+
+    li:hover {
+      background: orange;
+    }
+
   }
 
 }

@@ -32,40 +32,45 @@
   <header>
     <nav>
       <div class="nav-container">
-        <ul class="nav-bar-left">
-          <li id="homes"><i class="fas fa-list-ul"></i> All</li>
-          <li id="books"><i class="fas fa-book"></i> Books</li>
-          <li id="films"><i class="fas fa-film"></i> Films</li>
-          <li id="restaurants"><i class="fas fa-utensils"></i> Restaurants</li>
-          <li id="products"><i class="fas fa-shopping-basket"></i> Products</li>
-        </ul>
-        <ul class="nav-bar-right">
+        <div class="nav-bar-top">
           <li>Name</li>
           <li><i class="fas fa-sign-out-alt"></i> Log Out</li>
-        </ul>
+        </div>
       </div>
     </nav>
   </header>
 
   <!-- Main content -->
   <main>
-    <h2>
-    </h2>
-    <section class="tasks-list">
-      <form id="new-task-form" method="POST" action="/create">
-        <input type="text" name="description">
-      </form>
+    <!-- Side Nav -->
+    <div class="nav-bar-left">
+      <li id="homes"><i class="fas fa-list-ul"></i> All</li>
+      <li id="books"><i class="fas fa-book"></i> Books</li>
+      <li id="films"><i class="fas fa-film"></i> Films</li>
+      <li id="restaurants"><i class="fas fa-utensils"></i> Restaurants</li>
+      <li id="products"><i class="fas fa-shopping-basket"></i> Products</li>
+    </div>
 
-      <div><span>Incomplete</span></div>
+    <!-- Tasks -->
+    <div id="main-body">
+      <h3>
+      </h3>
+      <section class="tasks-list">
+        <form id="new-task-form" method="POST" action="/create">
+          <input type="text" name="description" placeholder="Create task here!">
+        </form>
 
-      <ul class="full-list incomplete">
-      </ul>
+        <div class="task-seperator"><span>Incomplete</span></div>
 
-      <div><span>Completed</span></div>
+        <ul class="full-list incomplete">
+        </ul>
 
-      <ul class="full-list complete">
-      </ul>
-    </section>
+        <div class="task-seperator"><span>Completed</span></div>
+
+        <ul class="full-list complete">
+        </ul>
+      </section>
+    </div>
 
     <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
