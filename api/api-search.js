@@ -22,7 +22,6 @@ const findMovie = (userInput) => {
     if (!res.data.Title.toLowerCase().includes(userInput.toLowerCase())) {
       return false
     }
-
     return res.data.Title
 
   })

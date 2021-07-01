@@ -26,7 +26,7 @@ module.exports = (db) => {
         .status(500)
         .json({error: err.message})
       })
-    }
+    };
     
     if (category) { 
    // this needs to be improved, currently it just removes the first characters ----
@@ -34,29 +34,52 @@ module.exports = (db) => {
 
     } else {
       Promise.all([findMovie(userInput), findBook(userInput), findRestaurant(userInput)])
-      .then((results) => {
+      .then(async (results) => {
+        let finalCategory;
+        let conflicts = 0;
+        // checks if multiple api's come back with a result 
+        for (const result of results) {
+          if(result) {
+            conflicts += 1
+          }
+        }
 
-        return [description, chooseCategory(results)]
-  
-      })
-      .then((values) => {
+        if (conflicts >= 2) {
 
-        queryFunction(values[0], values[1])
-  
+          db.query(`
+          SELECT books, films, restaurants, products FROM cortex 
+          WHERE search_value LIKE '%${userInput.substring(1)}%'`)
+          .then(data => {
+
+            const memories = data.rows[0]
+            let largestNumber = 0;
+            let smartCategory;
+
+            if (!memories) {
+              return queryFunction(description, chooseCategory(results))
+            }
+
+            for ( const memory in memories) {
+              if ( memories[memory] > largestNumber){
+                largestNumber = memories[memory]
+                smartCategory = memory
+              } 
+            }
+
+            return queryFunction(description, smartCategory)
+          })
+        } else {
+          return queryFunction(description, chooseCategory(results))
+        }
       })
     }
   })
 return router
-}
+};
 
-// this is for checking the DB for change history 
-  // db.query(`
-  // SELECT * FROM cortex 
-  // WHERE search_value LIKE '%${description.substring(1)}%'`)
-  // .then((data) => {
-  //   console.log(data)
-  // })
-  // .catch((err) => {
-  // console.error(err)
-  //  return res.status(500).json({error: err.message})
-  // })
+
+  
+
+
+ 
+
