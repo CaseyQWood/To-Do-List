@@ -3,5 +3,13 @@ form {
 
   input {
     width: 100%;
+    border: none;
+    border-bottom: 1px solid #505f63;
+    border-radius: 5px;
+    background: transparent;
+  }
+
+  input:focus {
+    outline: none;
   }
 }

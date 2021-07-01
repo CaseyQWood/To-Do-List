@@ -32,10 +32,10 @@
   <header>
     <nav>
       <div class="nav-container">
-        <ul class="nav-bar-top">
+        <div class="nav-bar-top">
           <li>Name</li>
           <li><i class="fas fa-sign-out-alt"></i> Log Out</li>
-        </ul>
+        </div>
       </div>
     </nav>
   </header>
@@ -57,7 +57,7 @@
       </h3>
       <section class="tasks-list">
         <form id="new-task-form" method="POST" action="/create">
-          <input type="text" name="description">
+          <input type="text" name="description" placeholder="What do you want to do?">
         </form>
 
         <div class="task-seperator"><span>Incomplete</span></div>
