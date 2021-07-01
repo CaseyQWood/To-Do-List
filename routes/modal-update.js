@@ -13,11 +13,6 @@ router.post('/:list_id', (req, res) => {
   Where id = $3
   RETURNING *;`;
 
-  console.log(category)
-  console.log(description)
-  // console.log(description.split(' '))
-  // const globalReplace = / /g;
-  // const keyWords = description.replace(globalReplace, '')
 
   db.query(`
   UPDATE cortex
@@ -25,7 +20,7 @@ router.post('/:list_id', (req, res) => {
   WHERE search_value = '${description}'
   RETURNING *`)
   .then((data) => {
-    console.log(data)
+    return res.json(data)
   })
   .catch((err) => {
   console.error(err)
