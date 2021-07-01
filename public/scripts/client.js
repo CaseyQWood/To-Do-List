@@ -29,7 +29,7 @@ $(document).ready(function() {
           <input type="checkbox" value="${task.id}" ${task.completed ? 'checked' : ''}>
           <label>${task.description}</label>
         </div>
-          <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-id="${task.id}" data-category="${task.category}">Edit</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-id="${task.id}" data-category="${task.category}">Edit</button>
       </li>
     `);
     return $list;
