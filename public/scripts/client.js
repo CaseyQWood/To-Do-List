@@ -25,31 +25,27 @@ $(document).ready(function() {
     const icon = checkIcon(task.category);
     let $list = $(`
       <li><i class="${icon}"></i>
+        <div id="checklist" checked>
           <input type="checkbox">
-          <span>${task.description}</span>
+          <label>${task.description}</label>
+        </div>
           <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-id="${task.id}" data-category="${task.category}">Edit</button>
       </li>
     `);
     return $list;
   };
 
-  const renderTasks = function(tasks) {
-    $(".full-list li").remove();
-
-    for(const task of tasks.list) {
-      if (task.completed) {
-        $(".complete").prepend(createList(task));
-      } else {
-        $(".incomplete").prepend(createList(task));
-      }
-    }
-  };
-
   const renderCategorizedTasks = function(category, tasks) {
     $(".full-list li").remove();
 
     for(const task of tasks.list) {
-      if (task.category && category === task.category) {
+      if (category === null) {
+        if (task.completed) {
+          $(".complete").prepend(createList(task));
+        } else {
+          $(".incomplete").prepend(createList(task));
+        }
+      } else if (task.category && category === task.category) {
         if (task.completed) {
           $(".complete").prepend(createList(task));
         } else {
@@ -63,12 +59,18 @@ $(document).ready(function() {
 
     $.get("/home", function() {
     }).then((result) => {
-      if (category) {
         renderCategorizedTasks(category, result);
-      } else {
-        renderTasks(result);
-      }
-    });
+    }).then(() => {
+      //checkbox
+      $('input[type="checkbox"]').click(function(){
+        if($(this).prop("checked") == true){
+          console.log("Checkbox is checked.");
+        }
+        else if($(this).prop("checked") == false){
+          console.log("Checkbox is unchecked.");
+        }
+      });
+    })
   };
 
   //submit new task
@@ -83,8 +85,9 @@ $(document).ready(function() {
     })
   });
 
-  //Edit Modal
 
+
+  //Edit Modal
   let taskId;
 
   $("#edit-modal").on("show.bs.modal", function (event) {
@@ -168,4 +171,6 @@ $(document).ready(function() {
 
   loadTasks(null);
   $('h2').append(renderHeading(null));
+
+
 });
