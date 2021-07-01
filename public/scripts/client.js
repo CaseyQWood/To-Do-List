@@ -25,8 +25,8 @@ $(document).ready(function() {
     const icon = checkIcon(task.category);
     let $list = $(`
       <li><i class="${icon}"></i>
-        <div id="checklist" checked>
-          <input type="checkbox" value="${task.id}">
+        <div id="checklist">
+          <input type="checkbox" value="${task.id}" ${task.completed ? 'checked' : ''}>
           <label>${task.description}</label>
         </div>
           <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#edit-modal" data-description="${task.description}" data-id="${task.id}" data-category="${task.category}">Edit</button>
@@ -72,13 +72,13 @@ $(document).ready(function() {
           $.post(`/complete/${taskId}`, data, function(data, status) {
 
           }).then(() => {
-            //loadTasks(category, res);
+            loadTasks(category, res);
             console.log("Checkbox is checked.");
           })
         } else if ($(this).prop("checked") == false){
           const data = "b";
           $.post(`/complete/${taskId}`, data, function(data, status) {
-            //loadTasks(category, res);
+            loadTasks(category, res);
           }).then(() => {
             console.log("Checkbox is unchecked.");
           })
@@ -98,8 +98,6 @@ $(document).ready(function() {
       loadTasks(catPage);
     })
   });
-
-
 
   //Edit Modal
   let taskId;
