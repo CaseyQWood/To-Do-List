@@ -35,7 +35,7 @@ $(document).ready(function() {
     return $list;
   };
 
-  const renderCategorizedTasks = function(category, tasks) {
+  const renderTasks = function(category, tasks) {
     $(".full-list li").remove();
 
     for(const task of tasks.list) {
@@ -59,7 +59,7 @@ $(document).ready(function() {
 
     $.get("/home", function() {
     }).then((result) => {
-        renderCategorizedTasks(category, result);
+        renderTasks(category, result);
     }).then(() => {
       //checkbox
       $('input[type="checkbox"]').click(function(){
