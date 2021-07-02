@@ -1,0 +1,228 @@
+.login-main{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0.5%;
+}
+.login-nav-container {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 40px 5px;
+  background-color: #ffff;
+  font-family: sans-serif;
+  font-size: 30px;
+  color:  #29402A;
+}
+
+.login-nav-bar-right {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  display: flex;
+  list-style-type: none;
+  padding: 18px;
+}
+
+#login {
+  margin: 0;
+}
+#register {
+  margin: 0;
+}
+
+#login:hover {
+  background-color: salmon;
+}
+
+#register:hover {
+  background-color: salmon;
+}
+.main_text{
+  justify-content: center;
+  padding-top: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 36px;
+}
+.main-pic {
+  width: 100%;
+
+  align-items: center;
+}
+
+.get_started {
+  background-color: #29402A;
+  color: #ffff;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 200px;
+  height: 50px;
+}
+
+.get_started:hover {
+  background-color: red;
+}
+
+
+.login-footer {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 20px;
+}
+
+.login_background {
+width: 100%;
+height: 100;
+}
+
+
+.user-name-in-nav {
+font-size: 20px;
+font-weight: bold;
+}
+
+.modal-cont {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.47);
+  top: 0;
+  left: 0;
+   overflow: auto
+
+}
+
+.modal-box{
+  width: 80%;
+  margin: 30px auto;
+  background-color: white;
+  position: relative;
+  text-align: center;
+  padding: 0
+}
+
+.modal-box .close {
+  position: absolute;
+  right: 16px;
+  top: 5px;
+  font-size: 25px;
+  font-weight: bolder;
+  cursor: pointer
+}
+.modal-box .close:hover, .modal-box .close:focus{
+  color: #c6c6c6
+}
+// .modal-box img{
+//   width: 30%;
+//   border-radius: 50%;
+//   display: block;
+//   margin:auto;
+//   padding: 14px;
+//   margin-bottom: 30px;
+//   min-width: 150px;
+//   max-width: 230px
+// }
+#login-box input{
+  width: 100%;
+  border: 1px solid #d0d0d0;
+  display: block;
+  padding: 8px;
+  margin: 5px 0;
+  margin-bottom: 10px;
+
+}
+.login-button {
+  padding: 10px;
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  color: white;
+  background-color: #29a6d4;
+  margin: 16px 0;
+
+}
+input[type = checkbox] {
+  margin-right: 2px;
+  vertical-align: baseline; /*no effect for baseline*/
+}
+
+
+.close-forgot{
+  background-color: #ffff
+}
+
+.modal-box label, .modal-box .login-button, .modal-box input{
+  width: 95%;
+  display: block;
+  margin: 10px auto
+
+}
+
+.modal-box .login-button{
+  margin-top: 16px;
+  cursor: pointer
+}
+input[type=checkbox]{
+  display: inline-block;
+  width: auto;
+  margin-left: 16px
+}
+.modal-box .close-forgot {
+  background-color: #d8d8d8;
+  width: 100%;
+  padding: 30px 2.5%;
+
+}
+.modal-box .cancel{
+  background-color: #c44f4f;
+  padding: 10px 15px;
+  font-size: 15px;
+  color: white;
+  cursor: pointer
+}
+.modal-box span{
+  float: right
+}
+.modal-box a{
+  color: #1483be;
+  font-weight: 500;
+  text-decoration: underline
+}
+
+
+.modal-cont{display: none}
+.modal-box {
+  animation-name: zoom;
+  animation-duration: .7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  border: 1px solid #b7b7b7;
+  border-radius: 4px;
+  box-shadow: 1px 1px 8px rgba(35, 120, 204, 0.8)
+
+}
+@keyframes zoom {
+  from{transform: scale(0);}
+  to{transform: scale(1);}
+}
+.login{
+  padding: 10px 25px;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(113, 113, 113);
+  cursor: pointer
+}
+h1, .login {
+  margin: auto;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+
+}

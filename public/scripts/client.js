@@ -57,8 +57,12 @@ $(document).ready(function() {
 
   const loadTasks = function(category) {
 
-    $.get("/home", function() {
-    }).then((result) => {
+    $.ajax({
+      method: "get",
+      url: "/home",
+      data: localStorage.getItem('user')
+    })
+    .then((result) => {
         renderTasks(category, result);
         return result;
     }).then((res) => {
@@ -86,6 +90,19 @@ $(document).ready(function() {
       });
     })
   };
+
+
+  const renderNav = function() {
+    $('.user-name-in-nav').html(`Welcome back, ${JSON.parse(localStorage.getItem('user')).username}`)
+  }
+  renderNav();
+  // logout function
+  $("#log-out").click(function(){
+    localStorage.clear();
+    $.get('/home', function(){
+
+    })
+  })
 
   //submit new task
   $("#new-task-form").submit(function(event) {

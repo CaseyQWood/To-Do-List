@@ -12,7 +12,7 @@ module.exports = (db) => {
     db.query(`SELECT * FROM users WHERE username = '${username}'`)
       .then(result => {
         if (password === result.rows[0].password) {
-          res.json(result.rows[0].id);
+          res.json(result.rows[0]);
         }
       })
       .catch(e => res.send(e));
