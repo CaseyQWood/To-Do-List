@@ -61,22 +61,6 @@ const findBook = (userInput) => {
 
 };
 
-// const findYelp = () => {
-//   return axios({
-//     method: 'get',
-//     url: `https://api.yelp.com/v3/businesses/search?term=subway&location=Vancouver`,
-//     responseType: 'json',
-//     headers : {
-//       Authorization: 'Bearer wANe0voBkG_03uib79wQzcYWQljryOD8i_AKZ4c_DgYTCK5ZxvsryuQrvnGiwqo7o9sh-MyBdX2QC32zRCW57pE-YNPzYLuHyDUceVCE9bDEXCxek59LPxP2C77cYHYx'
-//     }
-//   })
-//   .then(res => {
-//     console.log(res.data.businesses[0].name)
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   })
-// }
 
 const findRestaurant = (userInput) => {
   const globalReplace = / /g;
@@ -108,6 +92,40 @@ const findRestaurant = (userInput) => {
 };
 
 
+const findProducts = (userInput, db) => {
+  // const userWords = userInput.split(' ')
+  // let queryString = ''
+  // for (const word of userWords) {
+  //   queryString += word + 'AND name LIKE'
+  // }
+  const query =`SELECT name FROM products 
+  WHERE name LIKE '%${userInput.toLowerCase().substring(1, userInput.length -1)}%'`
+
+ return db.query(query)
+  .then(data => {
+    if (data.rows.length === 0) {
+      return false
+    }
+    console.log('THIS IS THE DATA', data.rows)
+    return data.rows
+  })
+}
+
+
+
+
+
+module.exports = {
+  findMovie,
+  findBook,
+  findRestaurant,
+  findProducts
+};
+
+
+// THIS IS A BACKUP API SEARCH FOR FOOD (DOCUMENU) MUST KEEP IN CASE
+
+
 // const findRestaurant = (userInput) => {
 //   const globalReplace = / /g;
 //   const searchString = userInput.replace(globalReplace, '+');
@@ -133,10 +151,3 @@ const findRestaurant = (userInput) => {
 //   })
 
 // };
-
-
-module.exports = {
-  findMovie,
-  findBook,
-  findRestaurant
-};

@@ -1,32 +1,36 @@
 INSERT INTO products (name)
-VALUES ('Zoe Small Breed Dry Dog Food, Chicken Quinoa and Black Bean Recipe, 3-pack');
+VALUES ('zoe small breed dry dog food, chicken quinoa and black bean recipe, 3-pack');
 INSERT INTO products (name)
-VALUES ('Dog Delights Beef Tendersticks Dog Treats');
+VALUES ('dog delights beef tendersticks dog treats');
 INSERT INTO products (name)
-VALUES ('Kirkland Signature Lamb, Rice & Vegetables Adult Dog Food');
+VALUES ('kirkland signature lamb, rice & vegetables adult dog food');
 INSERT INTO products (name)
-VALUES ('Sony 65 in. 4K HDR OLED Google Smart TV XR65A80J');
+VALUES ('sony 65 in. 4k hdr oled google smart tv xr65a80j');
 INSERT INTO products (name)
-VALUES ('LG 70 in. Smart 4K SMART TV 70UP7770');
+VALUES ('lg 70 in. smart 4k smart tv 70up7770');
 INSERT INTO products (name)
-VALUES ('Apple iPhone 12 Pro Max - 128 GB');
+VALUES ('apple iphone 12 pro max - 128 gb');
 INSERT INTO products (name)
-VALUES ('Apple iPhone XR - 128 GB');
+VALUES ('apple iphone xr - 128 gb');
 INSERT INTO products (name)
-VALUES ('PlayStation 5 DualSense Wireless Controller');
+VALUES ('playstation 5 dualsense wireless controller');
 INSERT INTO products (name)
-VALUES ('Minecraft - Nintendo Switch Game');
+VALUES ('minecraft - nintendo switch game');
 INSERT INTO products (name)
-VALUES ('Club Coffee 100% Colombian Coffee Beans, 42 x 56.7 g');
+VALUES ('club coffee 100% colombian coffee beans, 42 x 56.7 g');
 INSERT INTO products (name)
-VALUES ('Doritos Nacho Cheese Tortilla Chips, 730 g');
+VALUES ('doritos nacho cheese tortilla chips, 730 g');
 INSERT INTO products (name)
-VALUES ('Cadbury Wunderbar Chocolate Bars, 24-count');
+VALUES ('cadbury wunderbar chocolate bars, 24-count');
 INSERT INTO products (name)
-VALUES ('Xbox One Elite Series II Wireless Controller');
+VALUES ('xbox one elite series ii wireless controller');
 INSERT INTO products (name)
-VALUES ('Aiden Computer Desk');
+VALUES ('aiden computer desk');
 INSERT INTO products (name)
-VALUES ('Mr. Clean Magic Eraser Variety Pack, 9-count');
+VALUES ('mr clean magic eraser variety pack, 9-count');
 INSERT INTO products (name)
-VALUES ('Kirkland Signature 2-ply Paper Towels, 12-pack');
+VALUES ('kirkland signature 2-ply paper towels, 12-pack');
+
+
+
+

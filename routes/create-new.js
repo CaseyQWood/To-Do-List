@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router();
 require('dotenv').config()
-const {findMovie, findBook, findRestaurant} = require('../api/api-search')
+const {findMovie, findBook, findRestaurant, findProducts} = require('../api/api-search')
 const {chooseCategory, checkForVerb, queryFunction} = require('./helperFunctions')
 
 
@@ -33,9 +33,9 @@ module.exports = (db) => {
       queryFunction(userInput.substring(8), category)
 
     } else {
-      Promise.all([findMovie(userInput), findBook(userInput), findRestaurant(userInput)])
+      Promise.all([findMovie(userInput), findBook(userInput), findRestaurant(userInput), findProducts(userInput, db)])
       .then(async (results) => {
-        let finalCategory;
+        console.log(results)
         let conflicts = 0;
         // checks if multiple api's come back with a result 
         for (const result of results) {

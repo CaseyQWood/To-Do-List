@@ -8,8 +8,11 @@ const chooseCategory = (apiResults) => {
   }
   else if (apiResults[1]){
     return 'books'
-  } else {
+  } 
+  else if (apiResults[3]) {
     return 'products'
+  } else {
+    return null
   }
 }
 
