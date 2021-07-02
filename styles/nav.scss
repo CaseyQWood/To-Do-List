@@ -14,6 +14,8 @@ nav {
     li {
       display: inline;
       cursor: pointer;
+      margin: 0 5em;
+      padding: 0 1em;
 
       i {
         padding: 10px;
@@ -21,7 +23,8 @@ nav {
     }
 
     li:hover {
-      background: orange;
+      background: #ffffff;
+      border-radius: 10px;
     }
 
   }
