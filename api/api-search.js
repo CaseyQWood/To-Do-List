@@ -61,34 +61,19 @@ const findBook = (userInput) => {
 
 };
 
-// const findYelp = () => {
-//   return axios({
-//     method: 'get',
-//     url: `https://api.yelp.com/v3/businesses/search?term=subway&location=Vancouver`,
-//     responseType: 'json',
-//     headers : {
-//       Authorization: 'Bearer wANe0voBkG_03uib79wQzcYWQljryOD8i_AKZ4c_DgYTCK5ZxvsryuQrvnGiwqo7o9sh-MyBdX2QC32zRCW57pE-YNPzYLuHyDUceVCE9bDEXCxek59LPxP2C77cYHYx'
-//     }
-//   })
-//   .then(res => {
-//     console.log(res.data.businesses[0].name)
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   })
-// }
 
 const findRestaurant = (userInput) => {
   const globalReplace = / /g;
   const searchString = userInput.replace(globalReplace, '+');
   const apiKey = process.env.YELP_API_KEY;
-
+  
+  console.log(process.env)
   return axios({
     method: 'get',
     url: `https://api.yelp.com/v3/businesses/search?term=${searchString}&location=Vancouver`,
     responseType: 'json',
     headers : {
-      Authorization: 'Bearer wANe0voBkG_03uib79wQzcYWQljryOD8i_AKZ4c_DgYTCK5ZxvsryuQrvnGiwqo7o9sh-MyBdX2QC32zRCW57pE-YNPzYLuHyDUceVCE9bDEXCxek59LPxP2C77cYHYx'
+      Authorization: `Bearer ${apiKey}`
     }
   })
   .then((res) => {
