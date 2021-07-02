@@ -19,6 +19,7 @@ const findMovie = (userInput) => {
     if (res.data.Error === 'Movie not found!') {
       return false
     }
+    // if (!res.data.Title.toLowerCase().includes(userInput.toLowerCase())) {
     if (!removeSpecials(res.data.Title).toLowerCase().includes(removeSpecials(userInput).toLowerCase())) {
       return false
     }
@@ -60,31 +61,79 @@ const findBook = (userInput) => {
 
 };
 
+// const findYelp = () => {
+//   return axios({
+//     method: 'get',
+//     url: `https://api.yelp.com/v3/businesses/search?term=subway&location=Vancouver`,
+//     responseType: 'json',
+//     headers : {
+//       Authorization: 'Bearer wANe0voBkG_03uib79wQzcYWQljryOD8i_AKZ4c_DgYTCK5ZxvsryuQrvnGiwqo7o9sh-MyBdX2QC32zRCW57pE-YNPzYLuHyDUceVCE9bDEXCxek59LPxP2C77cYHYx'
+//     }
+//   })
+//   .then(res => {
+//     console.log(res.data.businesses[0].name)
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   })
+// }
+
 const findRestaurant = (userInput) => {
   const globalReplace = / /g;
   const searchString = userInput.replace(globalReplace, '+');
-  const apiKey = process.env.DOCUMENU_API_KEY;
+  const apiKey = process.env.YELP_API_KEY;
 
   return axios({
     method: 'get',
-    url: `https://api.documenu.com/v2/restaurants/search/fields?restaurant_name=${searchString}&key=${apiKey}`,
-    responseType: 'json'
+    url: `https://api.yelp.com/v3/businesses/search?term=${searchString}&location=Vancouver`,
+    responseType: 'json',
+    headers : {
+      Authorization: 'Bearer wANe0voBkG_03uib79wQzcYWQljryOD8i_AKZ4c_DgYTCK5ZxvsryuQrvnGiwqo7o9sh-MyBdX2QC32zRCW57pE-YNPzYLuHyDUceVCE9bDEXCxek59LPxP2C77cYHYx'
+    }
   })
   .then((res) => {
-
-    if (!res.data.data[0]) {
+    console.log(res.data.businesses[0])
+    if (!res.data.businesses[0]) {
       return false
     }
    
-    if (!res.data.data[0].restaurant_name.toLowerCase().includes(userInput.toLowerCase())) {
+    if (!res.data.businesses[0].name.toLowerCase().includes(userInput.toLowerCase())) {
       return false
     }
 
-    return res.data.data[0].restaurant_name;
+    return res.data.businesses[0].name;
 
   })
 
 };
+
+
+// const findRestaurant = (userInput) => {
+//   const globalReplace = / /g;
+//   const searchString = userInput.replace(globalReplace, '+');
+//   const apiKey = process.env.DOCUMENU_API_KEY;
+
+//   return axios({
+//     method: 'get',
+//     url: `https://api.documenu.com/v2/restaurants/search/fields?restaurant_name=${searchString}&key=${apiKey}`,
+//     responseType: 'json'
+//   })
+//   .then((res) => {
+
+//     if (!res.data.data[0]) {
+//       return false
+//     }
+   
+//     if (!res.data.data[0].restaurant_name.toLowerCase().includes(userInput.toLowerCase())) {
+//       return false
+//     }
+
+//     return res.data.data[0].restaurant_name;
+
+//   })
+
+// };
+
 
 module.exports = {
   findMovie,
