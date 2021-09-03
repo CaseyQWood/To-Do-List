@@ -1,15 +1,20 @@
-LHL Node Skeleton
-=========
+## Project Breakdown
 
-## Project Setup
+Smart To-Do list is a application which allows users to create to do lists where entries are auto categorizes into select groups. The process of which the app catgegorises has three parts, the app categorizes with a three tier method, verb tracking on user input where values which include eat, watch read, ect will be sorted based in relation, Machine learning is used to track all inputs from users accross the app and any edits to change categories to track corrections of categories for entries. Last method is a base current events based filter where a default popularity is prioritised for each category. 
 
-The following steps are only for _one_ of the group members to perform.
+Tech stack:
+- Node JS
+- Express
+- Jquery
+- Sass
 
-1. Create your own copy of this repo using the `Use This Template` button, ideally using the name of your project. The repo should be marked Public
-2. Verify that the skeleton code now shows up in your repo on GitHub, you should be automatically redirected
-3. Clone your copy of the repo to your dev machine
-4. Add your team members as collaborators to the project so that they can push to this repo
-5. Let your team members know the repo URL so that they use the same repo (they should _not_ create a copy/fork of this repo since that will add additional workflow complexity to the project)
+### Create a new task
+![create_new_task (1)](https://user-images.githubusercontent.com/44916074/132055409-2ba6d2d2-5ec6-4d85-8644-b04ff96a6a63.gif)
+
+
+### Edit task
+![edit_category (2)](https://user-images.githubusercontent.com/44916074/132060449-18536dd2-e9c1-4c96-a006-0afb17dcb595.gif)
+
 
 
 ## Getting Started
